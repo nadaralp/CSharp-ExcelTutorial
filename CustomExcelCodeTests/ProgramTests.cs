@@ -17,7 +17,7 @@ namespace CustomExcelCodeTests
         }
 
         [Fact]
-        public async Task Integration_CanCreateExcelFile_AndReadFromDataFromIt()
+        public async Task Integration_CanCreateExcelFile_AndReadDataFromIt()
         {
             // Arrange
             ExcelService excelService = new();
@@ -30,7 +30,7 @@ namespace CustomExcelCodeTests
             // start row is 2 since we print the headers
             var peopleData = await excelService.ReadFileAsync<Person>(file, startingRow: 2);
 
-            // Asset
+            // Assert
             peopleData.Should().HaveCountGreaterThan(0);
         }
 
